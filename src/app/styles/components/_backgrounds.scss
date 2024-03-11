@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as *;
+
+.bg-flame-red {
+  background-color: $FLAME_RED;
+}
+
+.bg-midnight-black {
+  background-color: $MIDNIGHT_BLACK;
+}
+
+.bg-steel-blue {
+  background-color: $STEEL_BLUE;
+}
+
+.bg-deep-navy {
+  background-color: $DEEP_NAVY;
+}
+
+.bg-pure-white {
+  background-color: $PURE_WHITE;
+}

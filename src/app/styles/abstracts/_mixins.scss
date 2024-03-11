@@ -1,0 +1,20 @@
+$DESKTOP_SIZE: 60rem;
+$TABLET_SIZE: 48rem;
+
+@mixin desktop {
+  @media (min-width: $DESKTOP_SIZE) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $TABLET_SIZE) and (max-width: $DESKTOP_SIZE) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $TABLET_SIZE) {
+    @content;
+  }
+}

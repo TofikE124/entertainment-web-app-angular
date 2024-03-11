@@ -1,0 +1,23 @@
+@use "./mixins" as *;
+
+$FLAME_RED: #fc4747;
+$MIDNIGHT_BLACK: #10141e;
+$STEEL_BLUE: #5a698f;
+$DEEP_NAVY: #161d2f;
+$PURE_WHITE: #fff;
+
+$HEADING-L: 2rem;
+$HEADING-M: 1.5rem;
+$HEADING-S: 1.5rem;
+$HEADING-XS: 1.125rem;
+$BODY-M: 0.9375rem;
+$BODY-S: 0.8125rem;
+
+@include mobile {
+  $HEADING-L: 1.25rem;
+  $HEADING-M: 1rem;
+  $HEADING-S: 0.9375rem;
+  $HEADING-XS: 0.875rem;
+  $BODY-M: 0.75rem;
+  $BODY-S: 0.6875rem;
+}

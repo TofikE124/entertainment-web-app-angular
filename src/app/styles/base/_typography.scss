@@ -1,0 +1,32 @@
+@use "../abstracts/variables" as *;
+
+.heading-l {
+  font-size: $HEADING-L;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+}
+
+.heading-m {
+  font-size: $HEADING-M;
+  font-weight: 300;
+}
+
+.heading-s {
+  font-size: $HEADING-S;
+  font-weight: 400;
+}
+
+.heading-xs {
+  font-size: $HEADING-XS;
+  font-weight: 500;
+}
+
+.body-m {
+  font-size: $BODY-M;
+  font-weight: 400;
+}
+
+.body-s {
+  font-size: $BODY-S;
+  font-weight: 300;
+}
