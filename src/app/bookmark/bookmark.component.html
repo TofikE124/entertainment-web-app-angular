@@ -1,0 +1,7 @@
+<div
+  class="bookmark grid place-items-center cursor-pointer h-[32px] w-[32px] rounded-full bg-[rgba(0,0,0,0.5)]"
+  [ngClass]="{ empty: !bookmarked, bookmarked: bookmarked }"
+>
+  <div class="bookmark-icon-empty" *ngIf="!bookmarked"></div>
+  <div class="bookmark-icon-full" *ngIf="bookmarked"></div>
+</div>

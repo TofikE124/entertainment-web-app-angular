@@ -18,7 +18,7 @@
 
 .heading-xs {
   font-size: $HEADING-XS;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .body-m {
@@ -29,4 +29,24 @@
 .body-s {
   font-size: $BODY-S;
   font-weight: 300;
+}
+
+.text-white {
+  color: $PURE_WHITE;
+}
+
+.text-red {
+  color: $RED;
+}
+
+.text-dark-blue {
+  color: $DARK_BLUE;
+}
+
+.text-greyish-blue {
+  color: $GREYISH_BLUE;
+}
+
+.text-semi-dark-blue {
+  color: $SEMI_DARK_BLUE;
 }

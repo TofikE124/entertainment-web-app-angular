@@ -1,0 +1,10 @@
+<div
+  class="thumbnail relative rounded-lg overflow-hidden"
+  [ngClass]="thumbnailClass"
+>
+  <thumbnail-image [is-trending]="isTrending" [title]="title"></thumbnail-image>
+  <div class="absolute z-10 top-4 right-4">
+    <bookmark></bookmark>
+  </div>
+  <thumbnail-overlay></thumbnail-overlay>
+</div>

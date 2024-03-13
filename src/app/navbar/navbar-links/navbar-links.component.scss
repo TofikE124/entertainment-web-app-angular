@@ -1,0 +1,35 @@
+@use "../../styles/abstracts/variables" as *;
+
+.icon {
+  background-color: $GREYISH_BLUE;
+  mask-size: cover;
+  mask-position: center center;
+  transition: background-color 150ms;
+  &:hover {
+    background-color: $PURE_WHITE;
+  }
+  &.active {
+    background-color: $PURE_WHITE;
+  }
+}
+
+.home-icon {
+  mask-image: url("/assets/icon-nav-home.svg");
+  -webkit-mask-image: url("/assets/icon-nav-home.svg");
+}
+
+.movie-icon {
+  mask-image: url("/assets/icon-nav-movies.svg");
+  -webkit-mask-image: url("/assets/icon-nav-movies.svg");
+}
+
+.tv-series-icon {
+  mask-image: url("/assets/icon-nav-tv-series.svg");
+  -webkit-mask-image: url("/assets/icon-nav-tv-series.svg");
+}
+
+.bookmark-icon {
+  mask-image: url("/assets/icon-nav-bookmark.svg");
+  -webkit-mask-image: url("/assets/icon-nav-bookmark.svg");
+  width: 17px;
+}

@@ -1,0 +1,25 @@
+.thumbnail {
+  overflow: hidden;
+
+  .thumbnail-img {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    transition: scale 500ms;
+  }
+
+  .thumbnail-overlay {
+    opacity: 0;
+    transition: opacity 250ms;
+  }
+
+  &:hover {
+    .thumbnail-img {
+      scale: 1.125;
+    }
+    .thumbnail-overlay {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<div class="w-full h-full lg:pt-8 lg:pl-9 md:pt-8 sm:pt-6">
+  <div class="max-w-[800px]">
+    <search [placeholder]="searchPlaceHolders[category]"></search>
+  </div>
+  <trending
+    [trendingTitles]="trendingTitles"
+    *ngIf="!search && category === 'home'"
+  ></trending>
+  <div class="mt-10">
+    <h1 class="heading-l lg:mb-8 mdsm:mb-6 text-white">
+      <ng-container *ngIf="!search">{{
+        categoryTitles[category]
+      }}</ng-container>
+      <ng-container *ngIf="search"
+        >Found {{ filteredTitles.length }} results for &lsquo;
+        {{ search }}
+        &rsquo;
+        {{ categorySearchSuffix[category] }}
+      </ng-container>
+    </h1>
+    <div
+      class="flex flex-wrap lg:gap-x-10 lg:gap-y-8 md:gap-x-[30px] md:gap-y-6 sm:gap-4"
+    >
+      <regular-title
+        *ngFor="let title of filteredTitles"
+        [title]="title"
+      ></regular-title>
+    </div>
+  </div>
+</div>

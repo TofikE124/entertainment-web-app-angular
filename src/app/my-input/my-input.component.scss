@@ -1,0 +1,33 @@
+@use "../styles/abstracts/variables" as *;
+
+.input-container {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $GREYISH_BLUE;
+    height: 1px;
+    width: 0;
+    transition: width 300ms;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &.error {
+    &::after {
+      background-color: $RED;
+    }
+  }
+
+  input.input {
+    caret-color: $RED;
+  }
+}

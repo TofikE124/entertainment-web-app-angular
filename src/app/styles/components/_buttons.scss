@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+
+.primary-button {
+  color: $PURE_WHITE;
+  background-color: $RED;
+  border-radius: 6px;
+  padding: 1rem;
+
+  transition: color 300ms, background-color 250ms;
+
+  &:hover {
+    color: $SEMI_DARK_BLUE;
+    background-color: $PURE_WHITE;
+  }
+}

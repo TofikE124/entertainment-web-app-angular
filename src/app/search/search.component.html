@@ -1,0 +1,12 @@
+<div class="flex gap-6 w-full">
+  <img src="./assets/icon-search.svg" class="object-cover h-[32px] w-[32px]" />
+  <div class="search-input-container grow">
+    <input
+      name="search"
+      [(ngModel)]="search"
+      (ngModelChange)="change($event)"
+      [placeholder]="placeholder"
+      class="search-input w-full bg-transparent placeholder:text-white placeholder:opacity-50 hover:outline-none focus:outline-none text-white heading-m pb-4"
+    />
+  </div>
+</div>

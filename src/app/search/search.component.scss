@@ -1,0 +1,27 @@
+@use "../styles/abstracts/variables" as *;
+
+.search-input-container {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $GREYISH_BLUE;
+    height: 1px;
+    width: 0%;
+    transition: width 300ms;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+input.search-input {
+  caret-color: $RED;
+}

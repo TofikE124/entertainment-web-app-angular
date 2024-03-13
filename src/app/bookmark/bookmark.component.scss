@@ -1,0 +1,35 @@
+.bookmark {
+  transition: background-color 250ms;
+  &:hover {
+    .bookmark-icon-empty {
+      background-color: black;
+    }
+
+    &.empty {
+      background-color: white;
+    }
+  }
+
+  .bookmark-icon-empty {
+    width: 12px;
+    height: 14px;
+    background-color: white;
+    transition: background-color 300ms;
+
+    mask-size: cover;
+    mask-position: center center;
+    -webkit-mask-image: url("../../assets/icon-bookmark-empty.svg");
+    mask-image: url("../../assets/icon-bookmark-empty.svg");
+  }
+
+  .bookmark-icon-full {
+    width: 12px;
+    height: 14px;
+    background-color: white;
+
+    mask-size: cover;
+    mask-position: center center;
+    -webkit-mask-image: url("../../assets/icon-bookmark-full.svg");
+    mask-image: url("../../assets/icon-bookmark-full.svg");
+  }
+}

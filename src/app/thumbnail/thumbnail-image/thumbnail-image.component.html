@@ -1,0 +1,10 @@
+<span class="thumbnail-img" *ngIf="isTrending">
+  <img [src]="title?.thumbnail?.trending?.large" class="hidden lgmd:block" />
+  <img [src]="title?.thumbnail?.trending?.small" class="hidden sm:block" />
+</span>
+
+<span class="thumbnail-img" *ngIf="!isTrending">
+  <img [src]="title?.thumbnail?.regular?.large" class="hidden lg:block" />
+  <img [src]="title?.thumbnail?.regular?.medium" class="hidden md:block" />
+  <img [src]="title?.thumbnail?.regular?.small" class="hidden sm:block"
+/></span>
