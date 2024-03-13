@@ -1,10 +1,10 @@
 <div
-  class="input-container p-4 pr-0 w-[340px] flex"
+  class="input-container p-4 pr-0 w-full flex"
   [ngClass]="{ error: errorMessage }"
 >
   <input
     class="input bg-transparent placeholder:text-white placeholder:opacity-50 body-m text-white hover:outline-none focus:outline-none"
-    placeholder="Email adress"
+    [placeholder]="placeholder"
   />
   <div *ngIf="errorMessage">
     <p class="body-s text-red mt-[2px]">{{ errorMessage }}</p>

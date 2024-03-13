@@ -1,0 +1,14 @@
+@use "../../../styles/abstracts/mixins" as *;
+
+.no-scroll-bar {
+  @include desktop {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  @include tablet {
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

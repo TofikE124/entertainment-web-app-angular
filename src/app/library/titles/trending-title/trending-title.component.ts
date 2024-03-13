@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Title } from '../../_models/Title';
-import { ThumbnailComponent } from '../../thumbnail/thumbnail.component';
+import { ThumbnailComponent } from '../../../thumbnail/thumbnail.component';
+import { Title } from '../../../_models/Title';
 
 @Component({
   selector: 'trending-title',

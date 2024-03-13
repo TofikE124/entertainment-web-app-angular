@@ -1,0 +1,21 @@
+<button
+  class="absolute sm:hidden w-[50px] bg-[rgba(0,0,0,0)] hover:bg-[rgba(0,0,0,0.5)] transition-[background-color] grid place-items-center z-30 top-0 bottom-0 left-0"
+  (click)="leftClick()"
+  *ngIf="scrollAmount"
+>
+  <img
+    src="./assets/icon-left-arrow.png"
+    class="w-[25px] h-[25px] object-cover"
+  />
+</button>
+
+<button
+  class="absolute sm:hidden w-[50px] bg-[rgba(0,0,0,0)] hover:bg-[rgba(0,0,0,0.5)] transition-[background-color] grid place-items-center z-30 top-0 bottom-0 right-0"
+  (click)="rightClick()"
+  *ngIf="!isFullScroll"
+>
+  <img
+    src="./assets/icon-right-arrow.png"
+    class="w-[25px] h-[25px] object-cover"
+  />
+</button>

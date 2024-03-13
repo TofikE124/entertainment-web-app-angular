@@ -13,7 +13,7 @@ export class ActiveLinkComponent {
   category: CategoryType = CategoryType.Home;
 
   maskUrls: { [key in CategoryType]: string } = {
-    [CategoryType.Home]: `url("/assets/icon-nav-home.svg")`,
+    [CategoryType.Home]: `url("/assets/logo.svg")`,
     [CategoryType.Movies]: `url("/assets/icon-nav-movies.svg")`,
     [CategoryType.TVSeries]: `url("/assets/icon-nav-tv-series.svg")`,
     [CategoryType.Bookmark]: `url("/assets/icon-nav-bookmark.svg")`,

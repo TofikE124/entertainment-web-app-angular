@@ -1,0 +1,17 @@
+@use "../styles/abstracts/variables" as *;
+
+.logo {
+  mask-image: url("/assets/logo.svg");
+  -webkit-mask-image: url("/assets/logo.svg");
+
+  background-color: $RED;
+
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+
+  mask-size: cover;
+  -webkit-mask-size: cover;
+
+  mask-position: center;
+  -webkit-mask-position: center;
+}

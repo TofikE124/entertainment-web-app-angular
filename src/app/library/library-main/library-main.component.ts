@@ -3,11 +3,11 @@ import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Title } from '../../_models/Title';
 import { SearchComponent } from '../../search/search.component';
-import { RegularTitleComponent } from '../../titles/regular-title/regular-title.component';
 import { TitleService } from './../../title.service';
 import { TrendingComponent } from './trending/trending.component';
 import { ActivatedRoute } from '@angular/router';
 import { CategoryType } from '../../_models/Category';
+import { RegularTitleComponent } from '../titles/regular-title/regular-title.component';
 
 @Component({
   selector: 'library-main',

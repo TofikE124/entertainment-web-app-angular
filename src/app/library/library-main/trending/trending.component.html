@@ -1,9 +1,15 @@
 <div class="lgmd:mt-9 sm:mt-6">
   <h1 class="heading-l text-white lgmd:mb-6 sm:mb-4">Trending</h1>
-  <div class="flex lgmd:gap-10 sm:gap-4">
-    <trending-title
-      *ngFor="let title of trendingTitles"
-      [title]="title"
-    ></trending-title>
+  <div class="relative rounded-lg overflow-hidden">
+    <nav-buttons></nav-buttons>
+    <div
+      id="trending-titles"
+      class="no-scroll-bar flex lgmd:gap-10 sm:gap-4 overflow-scroll"
+    >
+      <trending-title
+        *ngFor="let title of trendingTitles"
+        [title]="title"
+      ></trending-title>
+    </div>
   </div>
 </div>

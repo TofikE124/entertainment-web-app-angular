@@ -9,5 +9,6 @@ import { Component, Input, input } from '@angular/core';
   styleUrl: './my-input.component.scss',
 })
 export class MyInputComponent {
+  @Input('placeholder') placeholder: string = '';
   @Input('error-message') errorMessage = '';
 }

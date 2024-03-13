@@ -3,6 +3,19 @@
 .input-container {
   position: relative;
 
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $GREYISH_BLUE;
+    opacity: 0.25;
+    height: 1px;
+    width: 100%;
+    transition: width 300ms;
+  }
+
   &::after {
     content: "";
     position: absolute;

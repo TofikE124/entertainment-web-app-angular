@@ -1,0 +1,28 @@
+<div class="h-screen w-screen bg-dark-blue flex justify-center">
+  <div class="w-full flex flex-col items-center lgmd:mt-20 sm:mt-12">
+    <div class="logo w-[32px] h-[25.6px]"></div>
+
+    <div
+      class="bg-semi-dark-blue mt-20 rounded-[20px] lgmd:w-[400px] sm:w-[calc(100%-3rem)] lgmd:p-8 sm:p-6"
+    >
+      <h2 class="heading-l text-white">Login</h2>
+      <div class="mt-10">
+        <my-input placeholder="Email Adress"></my-input>
+      </div>
+      <div class="mt-6">
+        <my-input placeholder="Password"></my-input>
+      </div>
+      <button class="primary-button w-full mt-10">Login to your account</button>
+      <div>
+        <p class="body-m text-white mt-6 text-center w-full">
+          Don't have an account?<a
+            class="text-red ml-2"
+            routerLink="/signup"
+            routerLinkActive="router-link-active"
+            >Sign Up</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
