@@ -21,6 +21,7 @@ import { NavigateService } from './../services/navigate.service';
   styleUrl: './login.component.scss',
 })
 export class LoginComponent implements OnInit {
+  loggingIn = false;
   form?: FormGroup;
 
   constructor(
@@ -35,6 +36,12 @@ export class LoginComponent implements OnInit {
     this.form = this.fb.group({
       email: ['', [Validators.required, emailValidator()]],
       password: ['', [Validators.required]],
+    });
+
+    this.authService.getAppUser$().subscribe((user) => {
+      if (user) {
+        this.navigateService.returnToSavedUrl();
+      }
     });
   }
 
@@ -58,8 +65,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  signInWithGoogle() {
-    this.authService.signInWithGoogle().then((credentials) => {
+  async signInWithGoogle() {
+    this.authService.signInWithGoogle().then(() => {
       this.navigateService.returnToSavedUrl();
     });
   }

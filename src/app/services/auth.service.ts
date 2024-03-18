@@ -16,7 +16,7 @@ export class AuthService {
 
   signInWithGoogle() {
     const provider = new GoogleAuthProvider();
-    return this.afAuth.signInWithPopup(provider);
+    return this.afAuth.signInWithRedirect(provider);
   }
 
   signInWithEmilAndPassword(email: string, password: string) {
