@@ -1,0 +1,7 @@
+<loading-profile
+  *ngIf="isAppUserLoading; else loadedTemplate"
+></loading-profile>
+<ng-template #loadedTemplate>
+  <logged-profile *ngIf="appUser" [appUser]="appUser"></logged-profile>
+  <login *ngIf="!appUser"></login>
+</ng-template>

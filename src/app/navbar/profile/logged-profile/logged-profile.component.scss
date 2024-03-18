@@ -1,0 +1,30 @@
+@use "../../../styles/abstracts/mixins" as *;
+.profile {
+  &:hover {
+    .profile-overlay {
+      visibility: visible;
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+
+  .profile-overlay {
+    visibility: hidden;
+
+    @include desktop {
+      opacity: 0;
+      translate: -15px 0px;
+      transition: opacity 200ms, translate 250ms;
+    }
+    @include tablet {
+      opacity: 0;
+      translate: 0px -10px;
+      transition: opacity 200ms, translate 200ms;
+    }
+    @include mobile {
+      opacity: 0;
+      translate: 0 -12px;
+      transition: opacity 200ms, translate 250ms;
+    }
+  }
+}

@@ -8,8 +8,19 @@
 
   transition: color 300ms, background-color 250ms;
 
-  &:hover {
+  &:hover:not(:disabled) {
     color: $SEMI_DARK_BLUE;
     background-color: $PURE_WHITE;
   }
+
+  &:disabled {
+    opacity: 0.75;
+  }
+}
+
+.secondary-button {
+  color: $SEMI_DARK_BLUE;
+  background-color: $PURE_WHITE;
+  border-radius: 6px;
+  padding: 1rem;
 }

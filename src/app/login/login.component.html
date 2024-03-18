@@ -1,28 +1,55 @@
-<div class="h-screen w-screen bg-dark-blue flex justify-center">
-  <div class="w-full flex flex-col items-center lgmd:mt-20 sm:mt-12">
-    <div class="logo w-[32px] h-[25.6px]"></div>
+<div class="relative h-screen w-screen bg-dark-blue flex justify-center">
+  <div class="relative w-full flex flex-col items-center lgmd:mt-20 sm:mt-12">
+    <div class="heading-xs text-white absolute left-10" (click)="back()">
+      <img
+        src="/assets/icon-back-arrow.png"
+        class="w-[30px] h-[30px] object-cover cursor-pointer"
+      />
+    </div>
 
-    <div
+    <a class="logo w-[32px] h-[25.6px] mx-auto" routerLink="/library/home"></a>
+
+    <form
       class="bg-semi-dark-blue mt-20 rounded-[20px] lgmd:w-[400px] sm:w-[calc(100%-3rem)] lgmd:p-8 sm:p-6"
+      [formGroup]="form!"
+      *ngIf="form"
+      (ngSubmit)="submit()"
     >
       <h2 class="heading-l text-white">Login</h2>
       <div class="mt-10">
-        <my-input placeholder="Email Adress"></my-input>
+        <my-input
+          [form]="form"
+          controlName="email"
+          placeholder="Email Adress"
+          type="email"
+        ></my-input>
       </div>
       <div class="mt-6">
-        <my-input placeholder="Password"></my-input>
+        <my-input
+          [form]="form!"
+          controlName="password"
+          placeholder="Password"
+          type="password"
+        ></my-input>
       </div>
-      <button class="primary-button w-full mt-10">Login to your account</button>
+      <button [disabled]="!form.valid" class="primary-button w-full mt-10">
+        Login to your account
+      </button>
+      <button
+        class="secondary-button w-full mt-4 flex gap-2 items-center justify-center"
+        (click)="signInWithGoogle()"
+      >
+        <img src="/assets/icon-google.webp" class="w-[30px] h-[30px]" />Login
+        With Google
+      </button>
       <div>
         <p class="body-m text-white mt-6 text-center w-full">
-          Don't have an account?<a
-            class="text-red ml-2"
-            routerLink="/signup"
-            routerLinkActive="router-link-active"
+          Don't have an account?
+          <a class="text-red ml-2 underline cursor-pointer" (click)="signUp()"
             >Sign Up</a
           >
         </p>
       </div>
-    </div>
+    </form>
   </div>
 </div>

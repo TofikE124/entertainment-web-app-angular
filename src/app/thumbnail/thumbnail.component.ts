@@ -4,6 +4,11 @@ import { Title } from '../_models/Title';
 import { CommonModule } from '@angular/common';
 import { ThumbnailImageComponent } from './thumbnail-image/thumbnail-image.component';
 import { ThumbnailOverlayComponent } from './thumbnail-overlay/thumbnail-overlay.component';
+import {
+  BookmarkResponse,
+  BookmarkService,
+} from '../services/bookmark.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'thumbnail',
@@ -24,6 +29,11 @@ export class ThumbnailComponent implements OnInit {
 
   thumbnailClass = {};
   thumbnailImageClass = {};
+
+  constructor(
+    private bookmarkService: BookmarkService,
+    private toastrService: ToastrService
+  ) {}
 
   ngOnInit(): void {
     this.thumbnailClass = {
@@ -49,5 +59,13 @@ export class ThumbnailComponent implements OnInit {
       [regularMedium]: !this.isTrending,
       [regularSmall]: !this.isTrending,
     };
+  }
+
+  async bookMarkClicked() {
+    let result = await this.bookmarkService.bookmark(this.title!);
+    if (result === BookmarkResponse.NOT_LOGGED_IN)
+      this.toastrService.warning('Please login first to bookmark', 'Login', {
+        timeOut: 2000,
+      });
   }
 }

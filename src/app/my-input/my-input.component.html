@@ -1,12 +1,16 @@
 <div
   class="input-container p-4 pr-0 w-full flex"
-  [ngClass]="{ error: errorMessage }"
+  [ngClass]="{ error: field?.touched && field?.invalid }"
+  [formGroup]="form"
 >
   <input
     class="input bg-transparent placeholder:text-white placeholder:opacity-50 body-m text-white hover:outline-none focus:outline-none"
+    [formControlName]="controlName"
     [placeholder]="placeholder"
+    (input)="onValueChange($event)"
+    [type]="type"
   />
-  <div *ngIf="errorMessage">
-    <p class="body-s text-red mt-[2px]">{{ errorMessage }}</p>
+  <div *ngIf="field?.invalid && field?.touched">
+    <p class="body-s text-red mt-[2px]">{{ getErrorMessage() }}</p>
   </div>
 </div>

@@ -1,5 +1,5 @@
 export interface Title {
-  key: string;
+  key: number;
   category: 'Movie' | 'TV Series';
   isBookmarked: boolean;
   isTrending: boolean;
@@ -17,4 +17,5 @@ export interface Title {
       small: string;
     };
   };
+  bookmarked: boolean;
 }

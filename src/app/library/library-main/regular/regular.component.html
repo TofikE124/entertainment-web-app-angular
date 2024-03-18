@@ -1,0 +1,41 @@
+<div class="mt-10">
+  <h1 class="heading-l lg:mb-8 mdsm:mb-6 text-white">
+    <ng-container *ngIf="!search">{{ categoryTitles[category] }}</ng-container>
+    <ng-container *ngIf="search"
+      >Found {{ sectionTitles.length }} results for &lsquo;
+      {{ search }}
+      &rsquo;
+      {{ categorySearchSuffix[category] }}
+    </ng-container>
+  </h1>
+  <div
+    class="flex flex-wrap lg:gap-x-10 lg:gap-y-8 md:gap-x-[30px] md:gap-y-6 sm:gap-4"
+    *ngIf="!titlesLoading"
+  >
+    <regular-title
+      *ngFor="let title of sectionTitles; trackBy: trackByFn"
+      [title]="title"
+    ></regular-title>
+  </div>
+  <div *ngIf="!titlesLoading && !sectionTitles.length && !search">
+    <h1
+      class="heading-m text-white"
+      *ngIf="{ value: appUser$ | async } as AppUser"
+    >
+      <ng-container *ngIf="AppUser.value"
+        >You don't have any Bookmark!</ng-container
+      >
+      <ng-container *ngIf="!AppUser.value">
+        Login first to have some bookmarks
+      </ng-container>
+    </h1>
+  </div>
+  <div
+    class="flex flex-wrap lg:gap-x-10 lg:gap-y-8 md:gap-x-[30px] md:gap-y-6 sm:gap-4"
+    *ngIf="titlesLoading"
+  >
+    <loading-regular-title
+      *ngFor="let item of loadingArr"
+    ></loading-regular-title>
+  </div>
+</div>

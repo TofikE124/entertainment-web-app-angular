@@ -4,12 +4,22 @@
     <nav-buttons></nav-buttons>
     <div
       id="trending-titles"
-      class="no-scroll-bar flex lgmd:gap-10 sm:gap-4 overflow-scroll"
+      class="no-scroll-bar flex lgmd:gap-10 sm:gap-4 overflow-scroll overflow-y-hidden"
+      *ngIf="!titlesLoading"
     >
       <trending-title
-        *ngFor="let title of trendingTitles"
+        *ngFor="let title of trendingTitles; trackBy: trackByFn"
         [title]="title"
       ></trending-title>
+    </div>
+    <div
+      id="trending-titles"
+      class="no-scroll-bar flex lgmd:gap-10 sm:gap-4 overflow-scroll overflow-y-hidden"
+      *ngIf="titlesLoading"
+    >
+      <loading-trending-title
+        *ngFor="let item of loadingArr"
+      ></loading-trending-title>
     </div>
   </div>
 </div>

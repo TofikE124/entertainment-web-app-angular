@@ -1,0 +1,47 @@
+<div class="h-screen w-screen bg-dark-blue flex justify-center">
+  <div class="w-full flex flex-col items-center lgmd:mt-20 sm:mt-12">
+    <div class="logo w-[32px] h-[25.6px]"></div>
+
+    <form
+      class="bg-semi-dark-blue mt-20 rounded-[20px] lgmd:w-[400px] sm:w-[calc(100%-3rem)] lgmd:p-8 sm:p-6"
+      *ngIf="form"
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+    >
+      <h2 class="heading-l text-white">Sign Up</h2>
+      <div class="mt-10">
+        <my-input
+          [form]="form"
+          controlName="email"
+          placeholder="Email Adress"
+          type="email"
+        ></my-input>
+      </div>
+      <div class="mt-6">
+        <my-input
+          [form]="form"
+          controlName="password"
+          placeholder="Password"
+          type="password"
+        ></my-input>
+      </div>
+      <div class="mt-6">
+        <my-input
+          [form]="form"
+          controlName="repeatedPassword"
+          placeholder="Repeat Password"
+          type="password"
+        ></my-input>
+      </div>
+      <button class="primary-button w-full mt-6">Create an account</button>
+      <div>
+        <p class="body-m text-white mt-6 text-center w-full">
+          Already have an account?
+          <a class="text-red ml-2 underline cursor-pointer" (click)="login()"
+            >Login</a
+          >
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

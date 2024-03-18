@@ -1,0 +1,21 @@
+<div class="profile relative">
+  <button class="w-[40px] h-[40px] rounded-full">
+    <img
+      class="h-[40px] w-[40px] rounded-full"
+      [src]="appUser?.picture"
+      (error)="handleError($event)"
+    />
+  </button>
+  <div
+    class="absolute top-full text-center lg:mt-[-55px] lg:left-full lg:pl-3 md:right-0 md:-mr-8 sm:right-0 sm:mr-2 z-30"
+  >
+    <div
+      class="profile-overlay px-4 py-3 rounded-lg bg-greyish-blue lg:w-[180px]"
+    >
+      <p class="body-m text-white">{{ appUser?.email }}</p>
+      <button class="primary-button mt-2 w-full" (click)="logOut()">
+        Logout
+      </button>
+    </div>
+  </div>
+</div>

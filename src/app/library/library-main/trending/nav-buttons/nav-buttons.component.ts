@@ -1,5 +1,7 @@
 import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
+import { Title } from '../../../../_models/Title';
+import { title } from 'process';
 
 @Component({
   selector: 'nav-buttons',
@@ -8,24 +10,26 @@ import { Component } from '@angular/core';
   templateUrl: './nav-buttons.component.html',
   styleUrl: './nav-buttons.component.scss',
 })
-export class NavButtonsComponent {
+export class NavButtonsComponent implements AfterViewInit {
   trendingElements?: HTMLDivElement;
   scrollAmount = 0;
   elementsPerScroll = 1.5;
   isFullScroll = false;
 
-  ngOnInit(): void {
-    this.trendingElements = document.getElementById(
-      'trending-titles'
-    ) as HTMLDivElement;
+  ngAfterViewInit(): void {
+    if (typeof document != 'undefined') {
+      this.trendingElements = document.getElementById(
+        'trending-titles'
+      ) as HTMLDivElement;
 
-    this.trendingElements.onscrollend = (ev: Event) => {
-      let target = ev.target as HTMLDivElement;
-      this.scrollAmount = target.scrollLeft;
+      this.trendingElements.onscrollend = (ev: Event) => {
+        let target = ev.target as HTMLDivElement;
+        this.scrollAmount = target.scrollLeft;
 
-      this.isFullScroll =
-        target.scrollWidth - target.clientWidth - this.scrollAmount < 3;
-    };
+        this.isFullScroll =
+          target.scrollWidth - target.clientWidth - this.scrollAmount < 3;
+      };
+    }
   }
 
   rightClick() {

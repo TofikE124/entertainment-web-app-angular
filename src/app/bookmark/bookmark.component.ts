@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'bookmark',
@@ -9,5 +9,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './bookmark.component.scss',
 })
 export class BookmarkComponent {
-  @Input('bookmarked') bookmarked: boolean = true;
+  @Input('bookmarked') bookmarked: boolean = false;
 }

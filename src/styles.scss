@@ -1,5 +1,7 @@
 @use "./app/styles/main.scss";
 
+@import "ngx-toastr/toastr";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
