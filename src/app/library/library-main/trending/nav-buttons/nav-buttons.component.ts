@@ -11,28 +11,15 @@ import {Title} from '../../../../_models/Title';
   templateUrl: './nav-buttons.component.html',
   styleUrl: './nav-buttons.component.scss',
 })
-export class NavButtonsComponent implements AfterViewInit {
+export class NavButtonsComponent {
   trendingElements?: HTMLDivElement;
   scrollAmount = 0;
   elementsPerScroll = 1.5;
   isFullScroll = false;
 
-  ngAfterViewInit(): void {
-    if (typeof document != 'undefined') {
-      this.trendingElements =
-          document.getElementById('trending-titles') as HTMLDivElement;
-
-      this.trendingElements.onscrollend = (ev: Event) => {
-        let target = ev.target as HTMLDivElement;
-        this.scrollAmount = target.scrollLeft;
-
-        this.isFullScroll =
-            target.scrollWidth - target.clientWidth - this.scrollAmount < 3;
-      };
-    }
-  }
 
   rightClick() {
+    this.checkTrendingElements();
     let size =
         this.trendingElements?.getElementsByClassName('trending-title')[0]
             ?.clientWidth ||
@@ -44,6 +31,7 @@ export class NavButtonsComponent implements AfterViewInit {
   }
 
   leftClick() {
+    this.checkTrendingElements();
     let size =
         this.trendingElements?.getElementsByClassName('trending-title')[0]
             ?.clientWidth ||
@@ -52,5 +40,23 @@ export class NavButtonsComponent implements AfterViewInit {
       left: -size * this.elementsPerScroll,
       behavior: 'smooth',
     });
+  }
+
+  checkTrendingElements() {
+    console.log(this.trendingElements);
+    if (this.trendingElements) return;
+    console.log('checking for trending elements');
+    this.trendingElements =
+        document.getElementById('trending-titles') as HTMLDivElement;
+    console.log(`trending elements: ${this.trendingElements}`);
+
+
+    this.trendingElements.onscrollend = (ev: Event) => {
+      let target = ev.target as HTMLDivElement;
+      this.scrollAmount = target.scrollLeft;
+
+      this.isFullScroll =
+          target.scrollWidth - target.clientWidth - this.scrollAmount < 3;
+    };
   }
 }
