@@ -1,7 +1,8 @@
-import { NgIf } from '@angular/common';
-import { AfterViewInit, Component } from '@angular/core';
-import { Title } from '../../../../_models/Title';
-import { title } from 'process';
+import {NgIf} from '@angular/common';
+import {AfterViewInit, Component} from '@angular/core';
+import {title} from 'process';
+
+import {Title} from '../../../../_models/Title';
 
 @Component({
   selector: 'nav-buttons',
@@ -18,24 +19,24 @@ export class NavButtonsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     if (typeof document != 'undefined') {
-      this.trendingElements = document.getElementById(
-        'trending-titles'
-      ) as HTMLDivElement;
+      this.trendingElements =
+          document.getElementById('trending-titles') as HTMLDivElement;
 
       this.trendingElements.onscrollend = (ev: Event) => {
         let target = ev.target as HTMLDivElement;
         this.scrollAmount = target.scrollLeft;
 
         this.isFullScroll =
-          target.scrollWidth - target.clientWidth - this.scrollAmount < 3;
+            target.scrollWidth - target.clientWidth - this.scrollAmount < 3;
       };
     }
   }
 
   rightClick() {
     let size =
-      this.trendingElements?.getElementsByClassName('trending-title')[0]
-        .clientWidth || 0;
+        this.trendingElements?.getElementsByClassName('trending-title')[0]
+            ?.clientWidth ||
+        0;
     this.trendingElements?.scrollBy({
       left: size * this.elementsPerScroll,
       behavior: 'smooth',
@@ -44,8 +45,9 @@ export class NavButtonsComponent implements AfterViewInit {
 
   leftClick() {
     let size =
-      this.trendingElements?.getElementsByClassName('trending-title')[0]
-        .clientWidth || 0;
+        this.trendingElements?.getElementsByClassName('trending-title')[0]
+            ?.clientWidth ||
+        0;
     this.trendingElements?.scrollBy({
       left: -size * this.elementsPerScroll,
       behavior: 'smooth',
